@@ -1,3 +1,3 @@
-# use-class-state
+# useClassState Hook
 
 A `useState` hook that can accept class instance as state.
