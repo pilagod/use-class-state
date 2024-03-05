@@ -1,0 +1,19 @@
+{
+  "name": "use-class-state",
+  "version": "0.0.0",
+  "description": "A `useState` hook that can accept class instance as state.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pilagod/use-class-state.git"
+  },
+  "author": "Cyan Ho <pilagooood@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pilagod/use-class-state/issues"
+  },
+  "homepage": "https://github.com/pilagod/use-class-state#readme"
+}
