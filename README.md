@@ -1,4 +1,4 @@
-# use-cls-state
+# use-cls-state ![Build Status](https://github.com/pilagod/use-cls-state/actions/workflows/ci.yml/badge.svg?branch=main) [![Coverage Status](https://coveralls.io/repos/github/pilagod/use-cls-state/badge.svg?branch=main&kill_cache=1)](https://coveralls.io/github/pilagod/use-cls-state?branch=main)
 
 A `useState` hook that can accept class instance as state.
 
