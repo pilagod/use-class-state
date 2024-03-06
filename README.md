@@ -13,32 +13,30 @@ npm install --save use-cls-state
 `useClsState` is just like `useState`, with additional capability to accept class instance as state.
 
 ```tsx
-import { useClsState } from "use-cls-state"
+import { useClsState } from "use-cls-state";
 
 class State {
-  public constructor(
-    public counter: number
-  ) {}
+  public constructor(public counter: number) {}
 
   public increment() {
-    this.counter = this.counter + 1
+    this.counter = this.counter + 1;
   }
 }
 
 function Page() {
-  const [state, setState] = useClsState(new State(123))
+  const [state, setState] = useClsState(new State(123));
   const increment = () => {
     // Update class instance will not trigger re-render
-    state.increment()
+    state.increment();
     // Re-render is only triggered when calling state setter
-    setState(state)
-  }
+    setState(state);
+  };
   return (
     <div>
       <p>{state.counter}</p>
-      <button onClick={() => increment()}Increment</button>
+      <button onClick={() => increment()}>Increment</button>
     </div>
-  )
+  );
 }
 ```
 
