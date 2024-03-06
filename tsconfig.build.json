@@ -1,9 +1,10 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "dist",
-    "declaration": true,
-    "sourceMap": true
+    "module": "CommonJS",
+    "target": "ES6",
+    "outDir": "build/dist",
+    "declaration": true
   },
   "files": ["index.ts"]
 }
