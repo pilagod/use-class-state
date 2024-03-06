@@ -5,10 +5,6 @@ on:
     types: [created]
 
 jobs:
-  ci:
-    uses: pilagod/use-cls-state/.github/workflows/ci.yml@main
-    secrets: inherit
-
   publish:
     needs: ci
 
@@ -25,6 +21,9 @@ jobs:
 
       - name: Install
         run: npm ci
+
+      - name: Test
+        run: npm run test
 
       - name: Build
         run: npm run build
