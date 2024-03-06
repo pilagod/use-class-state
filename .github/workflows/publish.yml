@@ -1,0 +1,39 @@
+name: Publish
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  ci:
+    uses: pilagod/use-cls-state/.github/workflows/ci.yml
+    secrets: inherit
+
+  publish:
+    needs: ci
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Prepare package information
+        run: cp LICENSE package.json README.md dist
+
+      - name: Publish
+        working-directory: dist
+        run: npm publish --access public --tag latest
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
