@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { instanceToPlain, plainToClassFromExist } from "class-transformer";
-import { useCallback, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export function useClassState<S>(initialState?: S): [S, (state: S) => void] {
   const [internalState, setInternalState] = useState(

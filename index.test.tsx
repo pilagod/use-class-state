@@ -59,6 +59,10 @@ describe("useClassState", () => {
       this.b = data.b;
     }
 
+    public increment() {
+      this.a = this.a + 1;
+    }
+
     public equal(state: State) {
       return this.a === state.a && this.b === state.b;
     }
@@ -85,8 +89,14 @@ describe("useClassState", () => {
       return (
         <div>
           <p>{state.a}</p>
-          <button onClick={() => (state.a = state.a + 1)}>Update class</button>
-          <button onClick={() => setState(state)}>Update state</button>
+          <button onClick={() => state.increment()}>Update class</button>
+          <button
+            onClick={() => {
+              setState(state);
+            }}
+          >
+            Update state
+          </button>
         </div>
       );
     }
