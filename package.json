@@ -1,5 +1,5 @@
 {
-  "name": "use-class-state",
+  "name": "use-cls-state",
   "version": "0.0.0",
   "description": "A `useState` hook that can accept class instance as state.",
   "keywords": [
@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pilagod/use-class-state.git"
+    "url": "git+https://github.com/pilagod/use-cls-state.git"
   },
   "author": "Cyan Ho <pilagooood@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pilagod/use-class-state/issues"
+    "url": "https://github.com/pilagod/use-cls-state/issues"
   },
-  "homepage": "https://github.com/pilagod/use-class-state#readme",
+  "homepage": "https://github.com/pilagod/use-cls-state#readme",
   "dependencies": {
     "class-transformer": "^0.5.1",
     "reflect-metadata": "^0.2.1"

@@ -1,19 +1,19 @@
-# use-class-state
+# use-cls-state
 
 A `useState` hook that can accept class instance as state.
 
 ## Installation
 
 ```bash
-npm install --save use-class-state
+npm install --save use-cls-state
 ```
 
 ## Usage
 
-`useClassState` is just like `useState`, with additional capability to accept class instance as state.
+`useClsState` is just like `useState`, with additional capability to accept class instance as state.
 
 ```tsx
-import { useClassState } from "use-class-state"
+import { useClsState } from "use-cls-state"
 
 class State {
   public constructor(
@@ -26,7 +26,7 @@ class State {
 }
 
 function Page() {
-  const [state, setState] = useClassState(new State(123))
+  const [state, setState] = useClsState(new State(123))
   const increment = () => {
     // Update class instance will not trigger re-render
     state.increment()
@@ -48,4 +48,4 @@ Be aware when using class instance as state, updating properties on the class in
 
 © Cyan Ho (pilagod), 2024-NOW.
 
-Released under the [MIT License](https://github.com/pilagod/use-class-state/blob/main/LICENSE).
+Released under the [MIT License](https://github.com/pilagod/use-cls-state/blob/main/LICENSE).

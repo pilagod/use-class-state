@@ -5,15 +5,15 @@ import {
   renderHook,
   screen,
 } from "@testing-library/react";
-import { useClassState } from "./index";
+import { useClsState } from "./index";
 
-describe("useClassState", () => {
-  function renderUseClassStateHook<T>(initialState?: T) {
-    return renderHook(() => useClassState(initialState));
+describe("useClsState", () => {
+  function renderUseClsStateHook<T>(initialState?: T) {
+    return renderHook(() => useClsState(initialState));
   }
 
   it("should be able to use undefined as state", () => {
-    const { result: hook } = renderUseClassStateHook(undefined);
+    const { result: hook } = renderUseClsStateHook(undefined);
     expect(hook.current[0]).toBe(undefined);
 
     act(() => {
@@ -24,12 +24,12 @@ describe("useClassState", () => {
   });
 
   it("should use undefined as state when initial state is absent", () => {
-    const { result: hook } = renderUseClassStateHook();
+    const { result: hook } = renderUseClsStateHook();
     expect(hook.current[0]).toBe(undefined);
   });
 
   it("should be able to use null as state", () => {
-    const { result: hook } = renderUseClassStateHook(null);
+    const { result: hook } = renderUseClsStateHook(null);
     expect(hook.current[0]).toBe(null);
 
     act(() => {
@@ -40,7 +40,7 @@ describe("useClassState", () => {
   });
 
   it("should be able to use object as state", () => {
-    const { result: hook } = renderUseClassStateHook({ a: 123, b: "abc" });
+    const { result: hook } = renderUseClsStateHook({ a: 123, b: "abc" });
     expect(hook.current[0]).toEqual({ a: 123, b: "abc" });
 
     act(() => {
@@ -69,7 +69,7 @@ describe("useClassState", () => {
   }
 
   it("should be able to use class as state", () => {
-    const { result: hook } = renderUseClassStateHook(
+    const { result: hook } = renderUseClsStateHook(
       new State({ a: 123, b: "abc" }),
     );
     expect(hook.current[0]).toBeInstanceOf(State);
@@ -85,7 +85,7 @@ describe("useClassState", () => {
 
   it("should only trigger re-render when class state is updated by hook", () => {
     function Page(props: { initialState: State }) {
-      const [state, setState] = useClassState(props.initialState);
+      const [state, setState] = useClsState(props.initialState);
       return (
         <div>
           <p>{state.a}</p>
