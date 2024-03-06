@@ -6,8 +6,6 @@ on:
 
 jobs:
   publish:
-    needs: ci
-
     runs-on: ubuntu-latest
 
     steps:
