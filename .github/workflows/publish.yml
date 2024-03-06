@@ -6,7 +6,7 @@ on:
 
 jobs:
   ci:
-    uses: pilagod/use-cls-state/.github/workflows/ci.yml
+    uses: pilagod/use-cls-state/.github/workflows/ci.yml@main
     secrets: inherit
 
   publish:
